@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Prasad_2018</string>
+    <string name="text">Enter Your Name</string>
+    <string name="button_Submit">Submit</string>
+    <string name="text1">Hello</string>
+    <string name="text2">Welcome To Android World!!!</string>
+    <string name="title_activity_main2">NavigationDemo</string>
+    <string name="title_activity_login">Welcome</string>
+
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="logout">Logout</string>
+    <string name="todo">TODO</string>
+    <string name="hello">Hello</string>
+    <string name="delete">Delete</string>
+
+</resources>
