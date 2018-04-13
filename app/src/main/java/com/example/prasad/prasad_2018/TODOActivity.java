@@ -43,21 +43,11 @@ public class TODOActivity extends AppCompatActivity {
         View parent = (View) view.getParent();
         TextView taskTextView = (TextView) parent.findViewById(R.id.task_title);
         String task = String.valueOf(taskTextView.getText());
+
         Set i  = sp.getStringSet("todo",null);
-        if(i!=null)
-        {
-            Iterator itr = i.iterator();
-            while(itr.hasNext())
-            {
-                if(itr.next().toString()==task)
-                {
-                    //i.remove("task");
-                    i.remove(task);
-                    break;
-                }
-                break;
-            }
-        }
+        i.remove(task);
+
+        sp.edit().remove("todo").commit();
         sp.edit().putStringSet("todo",i).commit();
         updateUI();
     }
@@ -110,14 +100,16 @@ public class TODOActivity extends AppCompatActivity {
                                 //Log.d(TAG, "Task to add: " + task);
                                 //On Add Button
                                 Set j  = sp.getStringSet("todo",null);
-                                Iterator itr = j.iterator();
-                                while(itr.hasNext())
-                                {
-                                    toDoSet.add(itr.next().toString());
+                                if(j!=null) {
+                                    Iterator itr = j.iterator();
+                                    while (itr.hasNext()) {
+                                        toDoSet.add(itr.next().toString());
+                                    }
                                 }
-                                toDoSet.add(task);
-                                sp.edit().putStringSet("todo",toDoSet).commit();
-                                updateUI();
+                                    toDoSet.add(task);
+                                    sp.edit().putStringSet("todo", toDoSet).commit();
+                                    updateUI();
+
                             }
                         })
                         .setNegativeButton("Cancel", null)

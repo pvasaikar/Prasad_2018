@@ -75,6 +75,11 @@ public class MainActivity extends AppCompatActivity {
 
             //test
         }
+        if(id==R.id.map)
+        {
+            Intent nav= new Intent(MainActivity.this,MapsActivity.class);
+            startActivity(nav);
+        }
         return super.onOptionsItemSelected(item);
     }
 
